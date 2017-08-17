@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:tools="http://schemas.android.com/tools" id="cordova-plugin-geolocation" version="2.1.5">
+
+  <name>Cells-geolocation</name>
+  <engines>
+    <engine name="cordova" version="&gt;=3.4.0"/>
+  </engines>
+  <asset src="www/Geolocation.js" target="js/Geolocation.js"/>
+
+  <hook src="hooks/check-dependencies.js" type="before_plugin_install" />
+  <hook src="hooks/dev-build.js" type="after_plugin_add"/>
+
+
+  <preference name="GPS_REQUIRED" default="false"/>
+
+
+  <platform name="android">
+    <js-module src="www/Geolocation.js" name="cordovaCells.Geolocation">
+      <clobbers target="cordovaCells.Geolocation"/>
+    </js-module>
+
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="Geolocation">
+        <param name="android-package" value="com.cells.plugins.geolocation.GeolocationPlugin"/>
+      </feature>
+      <preferences name="com.cells.plugins.geolocation.GeolocationPlugin"/>
+    </config-file>
+
+    <config-file parent="/manifest" target="AndroidManifest.xml">
+      <uses-feature android:name="android.hardware.location.gps" android:required="$GPS_REQUIRED" />
+    </config-file>
+
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+      <meta-data xmlns:android="http://schemas.android.com/apk/res/android" android:value="@integer/google_play_services_version" xmlns:tools="http://schemas.android.com/tools" tools:replace="android:value" android:name="com.google.android.gms.version"/>
+    </config-file>
+
+    <source-file src="src/android/com/cells/plugins/geolocation/" target-dir="src/com/cells/plugins/"/>
+    <source-file src="src/android/tests/java/com/cells/plugins/geolocation" target-dir="tests/java/com/cells/plugins"/>
+    <framework src="src/android/cells-geolocation-build.gradle" custom="true" type="gradleReference"/>
+    <source-file src="src/android/proguard_geolocation.pro" target-dir="proguard/"/>
+  </platform>
+  <platform name="ios">
+    <js-module src="www/Geolocation.js" name="cordovaCells.Geolocation">
+      <clobbers target="cordovaCells.Geolocation"/>
+    </js-module>
+    <config-file parent="/*" target="config.xml">
+      <feature name="Geolocation">
+        <param name="ios-package" value="GeolocationPlugin"/>
+      </feature>
+    </config-file>
+    <config-file parent="NSLocationUsageDescription" target="*-Info.plist">
+      <key>NSLocationUsageDescription</key>
+      <string></string>
+    </config-file>
+    <config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
+      <key>NSLocationWhenInUseUsageDescription</key>
+      <string></string>
+    </config-file>
+    <header-file src="src/ios/GeolocationPlugin.h"/>
+    <source-file src="src/ios/GeolocationPlugin.m"/>
+    <header-file src="src/ios/GeolocationPlugin+Implementation.h"/>
+    <source-file src="src/ios/GeolocationPlugin+Implementation.m"/>
+    <header-file src="src/ios/ConstantsGeolocationPlugin.h"/>
+    <framework src="CoreLocation.framework"/>
+  </platform>
+  <platform name="windows">
+    <js-module src="www/Geolocation.js" name="cordovaCells.Geolocation">
+      <clobbers target="cordovaCells.Geolocation"/>
+    </js-module>
+    <js-module src="src/windows/GeolocationProxy.js" name="GeolocationPlugin">
+      <runs/>
+    </js-module>
+    <framework src="src/windows/src/GeolocationRuntimeComponent.csproj" type="projectReference" target="win"/>
+    <config-file parent="/Package/Capabilities" target="package.appxmanifest">
+      <DeviceCapability Name="location"/>
+    </config-file>
+  </platform>
+</plugin>

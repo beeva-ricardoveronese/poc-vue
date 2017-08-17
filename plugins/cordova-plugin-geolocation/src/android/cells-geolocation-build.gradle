@@ -1,0 +1,33 @@
+repositories {
+	maven { url "https://jitpack.io" }
+}
+dependencies {	
+	compile 'com.github.orhanobut:logger:1.12'
+    compile 'io.nlopez.smartlocation:library:3.2.7'
+    testCompile "org.robolectric:robolectric:3.0"
+}
+ext.postBuildExtras = {
+  
+   android {
+   	compileSdkVersion rootProject.androidCompileSdkVersion
+    buildToolsVersion rootProject.androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.androidMinSdkVersion
+        targetSdkVersion rootProject.androidTargetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+       }
+
+
+    sourceSets {
+        main.res.srcDirs =resfolders;
+    }
+   }
+}
+
+ext.postBuildExtras.android.sourceSets.main.res.srcDirs += 'res'
+ext.resfolders=ext.postBuildExtras.android.sourceSets.main.res.srcDirs;

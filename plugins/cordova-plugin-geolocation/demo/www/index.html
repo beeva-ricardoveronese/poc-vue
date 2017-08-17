@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *">
+    <meta name="format-detection" content="telephone=no">
+    <!--<meta name="msapplication-tap-highlight" content="no">-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Geolocation Plugin</title>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Plugin Header -->
+    <header>
+        <div>
+            <img id="logo" src="img/cells.png">
+            <div class="title">
+                <h3>Cells Demos</h3>
+                <h1>Geolocation Plugin</h1>
+            </div>
+        </div>
+        <p>The Geolocation plugin allows your application get the location of the device (latitude, longitude, altitude, accuracy) and the literal of the address associated to the location.</p>
+    </header>
+
+    <div>
+        <table class="buttonContainer">
+            <tr>
+                <td><button id="promptLocationService">Prompt for Location Service</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="buttonContainer">
+        <tr>
+            <td><button id="getLocation">Get Location</button></td>
+            <td><button id="getAddressFromLocation">Get Addr. from Location</button></td>
+        </tr>
+    </table>
+
+
+    <div>
+        <h2>Get Location From Address</h2>
+        <input class="box" type="text" id="address" placeholder="Address">
+        <table class="buttonContainer">
+            <tr>
+                <td><button class="button-secundary" id="getLocationFromAddress">Get Location</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div>
+        <h2>Watch Location</h2>
+        <table class="buttonContainer">
+            <tr>
+                <td><button id="startWatchLocation">Start</button></td>
+                <td><button id="startIntervalWatchLocation">Start Interval</button></td>
+            </tr>
+            <tr>
+                <td><button id="stopWatchLocation">Stop</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Result</h2>
+    <textarea id="successMessage" disabled></textarea>
+
+    <div id="errorAlert" class="alert">
+        <span class="closebtn">&times;</span>
+        <div id="errorMessage"></div>
+    </div>
+
+    <h2>Post Message Result</h2>
+    <textarea id="postMessageResult" disabled></textarea>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

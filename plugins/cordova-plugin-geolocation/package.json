@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-geolocation@~2.1.0",
+        "scope": null,
+        "escapedName": "cordova-plugin-geolocation",
+        "name": "cordova-plugin-geolocation",
+        "rawSpec": "~2.1.0",
+        "spec": ">=2.1.0 <2.2.0",
+        "type": "range"
+      },
+      "/Users/ricardo.veronese/code/pocs/poc-vue2/node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-geolocation@>=2.1.0 <2.2.0",
+  "_id": "cordova-plugin-geolocation@2.1.5",
+  "_inCache": true,
+  "_location": "/cordova-plugin-geolocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-geolocation@~2.1.0",
+    "scope": null,
+    "escapedName": "cordova-plugin-geolocation",
+    "name": "cordova-plugin-geolocation",
+    "rawSpec": "~2.1.0",
+    "spec": ">=2.1.0 <2.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://globaldevtools.bbva.com:443/artifactory/api/npm/npm-repo/cordova-plugin-geolocation/-/cordova-plugin-geolocation-2.1.5.tgz",
+  "_shasum": "4cea99d4e00bc01506e2fe5b75ec99de0a89a1e5",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-geolocation@~2.1.0",
+  "_where": "/Users/ricardo.veronese/code/pocs/poc-vue2/node_modules",
+  "author": {
+    "name": "Cells"
+  },
+  "cordova": {
+    "id": "cordova-plugin-geolocation",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "dependencies": {},
+  "description": "This plugin is for use with Cordova and allows your application get the location of the device (latitude, longitude, altitude, accuracy) and the literal of the address associated to the location.",
+  "devDependencies": {},
+  "dist": {
+    "tarball": "https://globaldevtools.bbva.com:443/artifactory/api/npm/npm-repo/cordova-plugin-geolocation/-/cordova-plugin-geolocation-2.1.5.tgz",
+    "shasum": "4cea99d4e00bc01506e2fe5b75ec99de0a89a1e5"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "keywords": [
+    "cordova",
+    "android",
+    "ios",
+    "windows",
+    "ecosystem:cordova"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-geolocation",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@globaldevtools.bbva.com:7999/cellsnative/cordova-plugin-geolocation.git"
+  },
+  "version": "2.1.5"
+}
