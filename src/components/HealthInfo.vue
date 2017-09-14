@@ -1,9 +1,10 @@
 <template>
 
-  <f7-col>
-    <f7-block-title>{{name}}</f7-block-title>
-    <f7-progressbar :progress="value"></f7-progressbar>
-  </f7-col>
+  <f7-block class="content-block-health-info" inner>
+    <span>{{name}}</span>
+    <f7-progressbar class="progressbar-health-info" :progress="value"></f7-progressbar>
+    <span>{{value}} %</span>
+  </f7-block>
 
 </template>
 
@@ -13,3 +14,17 @@
     props: ['name', 'value']
   }
 </script>
+
+<style>
+  .content-block-health-info {
+    margin: inherit;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+  }
+
+  .progressbar-health-info {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+</style>
