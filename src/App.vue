@@ -72,6 +72,10 @@
 
             <topbar></topbar>
 
+            <f7-fab color="pink" @click="addNutrient">
+              <span>GO!</span>
+            </f7-fab>
+
 
             <f7-block inner>
               <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
@@ -156,11 +160,17 @@
 </template>
 
 <script>
+  import eventHub from './events/hub.js'
   import topbar from './components/Topbar'
 
   export default {
     components: {
       topbar: topbar
+    },
+    methods: {
+      addNutrient: function () {
+        return eventHub.$emit('nutrient', 5)
+      }
     }
   }
 </script>

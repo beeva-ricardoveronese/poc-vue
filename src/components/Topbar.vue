@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  import eventHub from '../events/hub.js'
   import healthInfo from '../components/HealthInfo'
 
   export default {
@@ -24,6 +25,11 @@
           {name: 'Vitamin', value: 30},
           {name: 'Fat', value: 80}]
       }
+    },
+    mounted () {
+      eventHub.$on('nutrient', (val) => {
+        this.info[0].value += val
+      })
     }
   }
 </script>
