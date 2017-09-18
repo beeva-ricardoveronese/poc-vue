@@ -72,6 +72,8 @@
 
             <topbar></topbar>
 
+            <card></card>
+
             <f7-fab color="pink" @click="addNutrient">
               <span>GO!</span>
             </f7-fab>
@@ -162,15 +164,22 @@
 <script>
   import eventHub from './events/hub.js'
   import topbar from './components/Topbar'
+  import card from './components/Card'
 
   export default {
     components: {
-      topbar: topbar
+      topbar: topbar,
+      card: card
     },
     methods: {
       addNutrient: function () {
         return eventHub.$emit('nutrient', 5)
       }
+
+      // Element dragging ended
+      // onEnd: function (evt) {
+      //   return eventHub.$emit('nutrient', 5)
+      // }
     }
   }
 </script>
