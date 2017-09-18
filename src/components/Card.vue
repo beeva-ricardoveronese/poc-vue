@@ -18,7 +18,7 @@
           v-for="(item, index) in items" 
           :key="index">
           <h3>{{item.name}}</h3>
-          <button class="remove-item" v-on:click="removeJob(items, index)">Remove</button>
+          <button class="remove-item" v-on:click="removeItem(items, index)">Remove</button>
         </div>
       </draggable>
 
@@ -55,7 +55,7 @@
         this.history.push(`${element.name} is moved from position ${oldIndex} to ${newIndex}`)
       },
 
-      removeJob (items, index) {
+      removeItem (items, index) {
         // Remove job from GUI
         items.splice(index, 1)
       }
