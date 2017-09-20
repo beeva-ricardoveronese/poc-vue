@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  import firebase from '../services/firebase'
   import eventHub from '../events/hub.js'
   import healthInfo from '../components/HealthInfo'
 
@@ -17,18 +18,14 @@
     components: {
       healthInfo: healthInfo
     },
-    data () {
-      return {
-        info: [
-          {name: 'CHO', value: 15},
-          {name: 'Protein', value: 25},
-          {name: 'Vitamin', value: 30},
-          {name: 'Fat', value: 80}]
-      }
+    firebase: {
+      info: firebase.database.ref('healthinfo')
     },
     mounted () {
       eventHub.$on('nutrient', (val) => {
-        this.info[0].value += val
+        const item = {name: this.info[0].name, value: this.info[0].value + val}
+        const key = this.info[0]['.key']
+        this.$firebaseRefs.info.child(key).set(item)
       })
     }
   }
