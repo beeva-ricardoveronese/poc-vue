@@ -29,6 +29,7 @@
 
 <script>
   import draggable from 'vuedraggable'
+  import eventHub from '../events/hub.js'
 
   export default {
     name: 'card',
@@ -55,16 +56,16 @@
     },
     methods: {
       afterAdd (evt) {
-        console.log(evt)
+        this.shoppingList.splice(evt.oldIndex, 1)
+        const healthInfo = evt.moved.element.healthInfo.slice(0)
+        eventHub.$emit('nutrient', healthInfo)
       },
 
       start () {
-        console.log('start')
         this.disabled = true
       },
 
       end () {
-        console.log('end')
         this.disabled = false
       },
 

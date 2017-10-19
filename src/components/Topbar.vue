@@ -23,9 +23,14 @@
     },
     mounted () {
       eventHub.$on('nutrient', (val) => {
-        const item = {name: this.info[0].name, value: this.info[0].value + val}
-        const key = this.info[0]['.key']
-        this.$firebaseRefs.info.child(key).set(item)
+        val.forEach(item => {
+          let el = this.info.find(o => o.name === item.name)
+          el.value += item.value
+          if (el.value > 100) el.value = 0
+
+          // Save in firebase
+          this.$firebaseRefs.info.child(el['.key']).set({name: el.name, value: el.value})
+        })
       })
     }
   }
