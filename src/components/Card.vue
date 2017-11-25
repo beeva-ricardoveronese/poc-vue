@@ -2,40 +2,31 @@
   <f7-block>
     <f7-grid>
 
-      <draggable
-        class="dragArea"
-        :options="{group:'cards'}"
-        @change="afterAdd"
-        @click=""
-        @start="start()"
-        @end="end()"
-        :value="shoppingList">
-
-        <div v-for="(item, index) in shoppingList"
-             class="container-button inline-block col-50"
-             :disabled="disabled">
+      <section id="drag" class="dragArea">
+        <div v-for="item in shoppingList" v-draggable.shoppingList="item"
+             class="container-button inline-block col-50">
           <f7-button >{{item.name}}</f7-button>
         </div>
+      </section>
 
+      <section id="drop" v-droppable.shoppingList="afterAdd">
         <f7-fab color="pink" @click="">
           <span>GO!</span>
         </f7-fab>
-
-      </draggable>
+      </section>
 
     </f7-grid>
   </f7-block>
 </template>
 
+
+
+
 <script>
-  import draggable from 'vuedraggable'
   import eventHub from '../events/hub.js'
 
   export default {
     name: 'card',
-    components: {
-      draggable
-    },
     data () {
       return {
         disabled: false,
@@ -51,31 +42,24 @@
           { id: 9, name: 'Potato', healthInfo: [{name: 'CHO', value: 20}, {name: 'Protein', value: 10}, {name: 'Vitamin', value: 10}, {name: 'Fat', value: 5}] },
           { id: 10, name: 'Apples', healthInfo: [{name: 'CHO', value: 5}, {name: 'Protein', value: 2}, {name: 'Vitamin', value: 25}, {name: 'Fat', value: 0}] },
           { id: 11, name: 'Beef', healthInfo: [{name: 'CHO', value: 25}, {name: 'Protein', value: 22}, {name: 'Vitamin', value: 10}, {name: 'Fat', value: 10}] }
-        ]
+        ],
+        home: []
       }
     },
     methods: {
-      afterAdd (evt) {
-        this.shoppingList.splice(evt.oldIndex, 1)
-        const healthInfo = evt.moved.element.healthInfo.slice(0)
+      afterAdd (item) {
+        item = JSON.parse(item)
+        // Remove the shoppingList element
+        this.shoppingList.splice(this.shoppingList.findIndex(o => item.id === o.id), 1)
+        const healthInfo = item.healthInfo
         eventHub.$emit('nutrient', healthInfo)
-      },
-
-      start () {
-        this.disabled = true
-      },
-
-      end () {
-        this.disabled = false
-      },
-
-      removeItem (shoppingList, index) {
-        // Remove job from GUI
-        shoppingList.splice(index, 1)
       }
     }
   }
 </script>
+
+
+
 
 <style>
 
@@ -92,13 +76,5 @@
   .inline-block {
     display: inline-block;
   }
-
-  /*.dragArea .container-button:nth-child(-n+2) .button {*/
-    /*margin-top: inherit;*/
-  /*}*/
-
-  /*.dragArea .container-button:nth-child(11) .button {*/
-    /*margin-bottom: inherit;*/
-  /*}*/
 
 </style>

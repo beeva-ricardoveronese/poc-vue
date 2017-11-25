@@ -12,6 +12,9 @@ import Framework7 from 'framework7'
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue'
 
+// Import Vue2Dnd for draggable
+import Vue2Dnd from 'vue2-dnd'
+
 // Import F7 iOS Theme Styles
 /* eslint-disable no-unused-vars */
 import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
@@ -33,6 +36,8 @@ import App from './App'
 Vue.use(VueFire)
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
+// Init Vue Draggable
+Vue.use(Vue2Dnd)
 
 /* eslint-disable no-new */
 // Init App
