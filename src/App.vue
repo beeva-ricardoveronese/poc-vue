@@ -72,7 +72,7 @@
 
             <topbar></topbar>
 
-            <card></card>
+            <board></board>
 
           </f7-page>
         </f7-pages>
@@ -127,12 +127,12 @@
 
 <script>
   import topbar from './components/Topbar'
-  import card from './components/Card'
+  import board from './components/Board'
 
   export default {
     components: {
       topbar: topbar,
-      card: card
+      board: board
     }
   }
 </script>
