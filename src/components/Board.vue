@@ -3,24 +3,20 @@
     <f7-grid>
 
       <section id="drag" class="dragArea">
-        <div v-for="item in shoppingList" v-draggable.shoppingList="item"
-             class="container-button inline-block col-50">
+        <div v-for="item in shoppingList" v-draggable.shoppingList="item" class="container-button inline-block col-50">
           <card :name="item.name"></card>
         </div>
       </section>
 
       <section id="drop" v-droppable.shoppingList="afterAdd">
-        <f7-fab color="pink" @click="">
-          <span>GO!</span>
+        <f7-fab color="pink">
+          <f7-icon f7="bag"></f7-icon>
         </f7-fab>
       </section>
 
     </f7-grid>
   </f7-block>
 </template>
-
-
-
 
 <script>
   import eventHub from '../events/hub.js'
@@ -51,9 +47,6 @@
     }
   }
 </script>
-
-
-
 
 <style>
 

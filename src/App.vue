@@ -136,3 +136,11 @@
     }
   }
 </script>
+
+<style>
+  .page-content {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>

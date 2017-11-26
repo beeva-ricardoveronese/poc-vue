@@ -6,18 +6,12 @@
 
 </template>
 
-
-
-
 <script>
   export default {
     name: 'card',
     props: ['name']
   }
 </script>
-
-
-
 
 <style>
 
