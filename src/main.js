@@ -12,6 +12,10 @@ import Framework7 from 'framework7'
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue'
 
+// Fontawesome bindings for vue
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+
 // Import Vue2Dnd for draggable
 import Vue2Dnd from 'vue2-dnd'
 
@@ -36,6 +40,8 @@ import App from './App'
 Vue.use(VueFire)
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
+// Init the Iconset
+Vue.component('icon', Icon)
 // Init Vue Draggable
 Vue.use(Vue2Dnd)
 

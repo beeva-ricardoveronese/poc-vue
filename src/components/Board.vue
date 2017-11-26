@@ -9,8 +9,8 @@
       </section>
 
       <section id="drop" v-droppable.shoppingList="afterAdd">
-        <f7-fab color="pink">
-          <f7-icon f7="bag"></f7-icon>
+        <f7-fab>
+          <icon name="shopping-cart"></icon>
         </f7-fab>
       </section>
 
@@ -50,18 +50,48 @@
 
 <style>
 
+  .fa-icon {
+    user-select: none;
+    pointer-events: none;
+    width: auto;
+    height: 1em; /* or any other relative font sizes */
+
+    /* You would have to include the following two lines to make this work in Safari */
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   .dragArea {
     width: 100%;
     margin-top: -30px;
   }
 
   .dragArea .card {
-    margin: 25px;
+    margin: 15px 10px;
     height: 50px;
   }
 
   .inline-block {
     display: inline-block;
   }
+
+  .floating-button {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    color: #7362b1;
+    border: none;
+  }
+  .floating-button.dragover,
+  .floating-button .dragover  {
+    font-size: 200px;
+  }
+
+  .floating-button,
+  .floating-button.active-state, 
+  .floating-button:active {
+    background-color: transparent;
+  }
+
 
 </style>
