@@ -71,6 +71,10 @@
     height: 50px;
   }
 
+  .dragArea .card-content-inner {
+    text-align: center;
+  }
+
   .inline-block {
     display: inline-block;
   }
@@ -88,7 +92,7 @@
   }
 
   .floating-button,
-  .floating-button.active-state, 
+  .floating-button.active-state,
   .floating-button:active {
     background-color: transparent;
   }
