@@ -1,4 +1,5 @@
 .DS_Store
+config/firebase.js
 node_modules/
 dist/
 npm-debug.log*
