@@ -1,0 +1,9 @@
+'use strict';
+
+module.exports = {
+  API_KEY: '<API_KEY>',
+  PROJECT_ID: '<PROJECT_ID>',
+  DATABASE_NAME: '<DATABASE_NAME>',
+  BUCKET: '<BUCKET>',
+  MESSAGING_SENDER_ID: '<MESSAGING_SENDER_ID>'
+};

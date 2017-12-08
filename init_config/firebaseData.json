@@ -1,0 +1,192 @@
+{
+  "healthinfo" : [ {
+    "name" : "CHO",
+    "value" : 35
+  }, {
+    "name" : "Protein",
+    "value" : 83
+  }, {
+    "name" : "Vitamin",
+    "value" : 67
+  }, {
+    "name" : "Fat",
+    "value" : 17
+  } ],
+  "shoppingList" : [ {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 5
+    }, {
+      "name" : "Protein",
+      "value" : 2
+    }, {
+      "name" : "Vitamin",
+      "value" : 20
+    }, {
+      "name" : "Fat",
+      "value" : 0
+    } ],
+    "id" : 1,
+    "name" : "Oranges"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 10
+    }, {
+      "name" : "Protein",
+      "value" : 15
+    }, {
+      "name" : "Vitamin",
+      "value" : 10
+    }, {
+      "name" : "Fat",
+      "value" : 5
+    } ],
+    "id" : 2,
+    "name" : "Egs"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 5
+    }, {
+      "name" : "Protein",
+      "value" : 5
+    }, {
+      "name" : "Vitamin",
+      "value" : 12
+    }, {
+      "name" : "Fat",
+      "value" : 2
+    } ],
+    "id" : 3,
+    "name" : "Lettuce"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 10
+    }, {
+      "name" : "Protein",
+      "value" : 20
+    }, {
+      "name" : "Vitamin",
+      "value" : 10
+    }, {
+      "name" : "Fat",
+      "value" : 3
+    } ],
+    "id" : 4,
+    "name" : "Chicken"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 15
+    }, {
+      "name" : "Protein",
+      "value" : 18
+    }, {
+      "name" : "Vitamin",
+      "value" : 15
+    }, {
+      "name" : "Fat",
+      "value" : 8
+    } ],
+    "id" : 5,
+    "name" : "Salmon"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 20
+    }, {
+      "name" : "Protein",
+      "value" : 5
+    }, {
+      "name" : "Vitamin",
+      "value" : 15
+    }, {
+      "name" : "Fat",
+      "value" : 15
+    } ],
+    "id" : 6,
+    "name" : "Olive Oil"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 12
+    }, {
+      "name" : "Protein",
+      "value" : 20
+    }, {
+      "name" : "Vitamin",
+      "value" : 14
+    }, {
+      "name" : "Fat",
+      "value" : 3
+    } ],
+    "id" : 7,
+    "name" : "Turkey"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 12
+    }, {
+      "name" : "Protein",
+      "value" : 12
+    }, {
+      "name" : "Vitamin",
+      "value" : 25
+    }, {
+      "name" : "Fat",
+      "value" : 12
+    } ],
+    "id" : 8,
+    "name" : "Avocado"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 20
+    }, {
+      "name" : "Protein",
+      "value" : 10
+    }, {
+      "name" : "Vitamin",
+      "value" : 10
+    }, {
+      "name" : "Fat",
+      "value" : 5
+    } ],
+    "id" : 9,
+    "name" : "Potato"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 5
+    }, {
+      "name" : "Protein",
+      "value" : 2
+    }, {
+      "name" : "Vitamin",
+      "value" : 25
+    }, {
+      "name" : "Fat",
+      "value" : 0
+    } ],
+    "id" : 10,
+    "name" : "Apples"
+  }, {
+    "healthInfo" : [ {
+      "name" : "CHO",
+      "value" : 25
+    }, {
+      "name" : "Protein",
+      "value" : 22
+    }, {
+      "name" : "Vitamin",
+      "value" : 10
+    }, {
+      "name" : "Fat",
+      "value" : 10
+    } ],
+    "id" : 11,
+    "name" : "Beef"
+  } ]
+}
