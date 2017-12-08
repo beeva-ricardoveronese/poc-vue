@@ -10,6 +10,14 @@ Add food to cart: Implement a webapp/mobileapp in phonegap that gives the user t
 the cart and calculate how much food properties the user will benefit and also points the bad qualities of the previous,
 all that will get reflected on the top bar of the UI.
 
+## Firebase Config
++ Create an empty Firebase project.
++ Open Realtime Database and import the file [firebaseData.json](init_config/firebaseData.json).
++ In rules tab, allow .read and .write without authentication.
++ Go to Project Overview -> Configuration.
++ Click in Add Firebase for the Web App. Copy the values in ***config/firebase.js*** using the file [firebase.js](init_config/firebase.js).
+
+
 ## Usage
 
     npm install
