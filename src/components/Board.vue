@@ -2,17 +2,26 @@
   <f7-block>
     <f7-grid>
 
-      <section id="drag" class="dragArea">
-        <div v-for="item in shoppingList" v-draggable.shoppingList="item" class="container-button inline-block col-50">
+      <draggable
+        class="dragArea"
+        :options="{group:'cards'}"
+        @change="afterAdd"
+        @click=""
+        @start="start()"
+        @end="end()"
+        :value="shoppingList">
+
+        <div v-for="(item, index) in shoppingList"
+             class="container-button inline-block col-50"
+             :disabled="disabled">
           <card :name="item.name"></card>
         </div>
-      </section>
 
-      <section id="drop" v-droppable.shoppingList="afterAdd">
         <f7-fab>
           <icon name="shopping-cart"></icon>
         </f7-fab>
-      </section>
+
+      </draggable>
 
     </f7-grid>
   </f7-block>
@@ -22,27 +31,37 @@
   import eventHub from '../events/hub.js'
   import firebase from '../services/firebase'
   import card from '../components/Card'
+  import draggable from 'vuedraggable'
 
   export default {
     name: 'board',
     components: {
-      card: card
+      card: card,
+      draggable
     },
     firebase: {
       shoppingList: firebase.database.ref('shoppingList')
     },
     data () {
       return {
+        disabled: false,
         home: []
       }
     },
     methods: {
       afterAdd (item) {
-        item = JSON.parse(item)
-        // Remove the shoppingList element
-        this.shoppingList.splice(this.shoppingList.findIndex(o => item.id === o.id), 1)
-        const healthInfo = item.healthInfo
+        this.shoppingList.splice(item.oldIndex, 1)
+        const healthInfo = item.moved.element.healthInfo.slice(0)
         eventHub.$emit('nutrient', healthInfo)
+      },
+      start () {
+        this.disabled = true
+      },
+      end () {
+        this.disabled = false
+      },
+      removeItem (shoppingList, index) {
+        shoppingList.splice(index, 1)
       }
     }
   }

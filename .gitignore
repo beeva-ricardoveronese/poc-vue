@@ -1,4 +1,5 @@
 .DS_Store
+www/
 config/firebase.js
 node_modules/
 dist/
